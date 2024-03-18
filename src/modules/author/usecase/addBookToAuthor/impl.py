@@ -1,8 +1,8 @@
 from pymfdata.common.usecase import BaseUseCase
 from pymfdata.rdb.transaction import async_transactional
 
-from modules.author.domain.aggregate.model import Author
-from modules.author.infrastructure.persistence.uow import AuthorPersistenceUnitOfWork
+from src.modules.author.domain.aggregate.model import Author
+from src.modules.author.infrastructure.persistence.uow import AuthorPersistenceUnitOfWork
 
 from .command import AddBookToAuthorCommand
 

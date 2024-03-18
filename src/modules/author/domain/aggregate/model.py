@@ -1,9 +1,9 @@
 from dataclasses import dataclass, field
-from typing import Optional, List
+from typing import List, Optional
 
-from modules.author.domain.value_objects import Age, Biography, Name, AuthorBook
-from modules.author.usecase.addBookToAuthor.command import AddBookToAuthorCommand
-from modules.author.usecase.newAuthor.command import NewAuthorCommand
+from src.modules.author.domain.value_objects import Age, AuthorBook, Biography, Name
+from src.modules.author.usecase.addBookToAuthor.command import AddBookToAuthorCommand
+from src.modules.author.usecase.newAuthor.command import NewAuthorCommand
 
 from .id import AuthorId
 
@@ -17,7 +17,7 @@ class Author:
     book_ids: List[AuthorBook] = field(default_factory=list)
 
     @staticmethod
-    def new_author(command: NewAuthorCommand) -> 'Author':
+    def new_author(command: NewAuthorCommand) -> "Author":
         return Author(id=AuthorId.next_id(), **command.dict())
 
     def add_book(self, command: AddBookToAuthorCommand):

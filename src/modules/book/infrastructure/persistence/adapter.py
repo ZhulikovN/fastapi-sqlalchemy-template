@@ -1,13 +1,15 @@
 from pymfdata.common.usecase import BaseUseCase
 from pymfdata.rdb.transaction import async_transactional
 
-from common.protocols.persistence_adapter import PersistenceAdapter
-from modules.book.domain.aggregate.model import Book, BookId
+from src.common.protocols.persistence_adapter import PersistenceAdapter
+from src.modules.book.domain.aggregate.model import Book, BookId
 
 from .uow import BookPersistenceUnitOfWork
 
 
-class BookPersistenceAdapter(BaseUseCase[BookPersistenceUnitOfWork], PersistenceAdapter[Book, BookId]):
+class BookPersistenceAdapter(
+    BaseUseCase[BookPersistenceUnitOfWork], PersistenceAdapter[Book, BookId]
+):
     def __init__(self, uow: BookPersistenceUnitOfWork) -> None:
         self._uow = uow
 

@@ -1,10 +1,11 @@
 from dataclasses import asdict
+
 from pymfdata.rdb.mapper import mapper_registry
 from sqlalchemy.orm import backref, relationship
 
-from common.protocols.model_mapper import ModelMapper
-from modules.book.domain.aggregate.model import Book, BookId, BookAuthor
-from persistence.book.entity import BookEntity, BookAuthorEntity
+from src.common.protocols.model_mapper import ModelMapper
+from src.modules.book.domain.aggregate.model import Book, BookAuthor, BookId
+from src.persistence.book.entity import BookAuthorEntity, BookEntity
 
 
 class BookMapper(ModelMapper[Book, BookEntity]):
@@ -17,7 +18,7 @@ class BookMapper(ModelMapper[Book, BookEntity]):
             pages=model.pages,
             price=model.price,
             publication_year=model.publication_year,
-            authors=list(map(lambda entity: entity.id, model.authors))
+            authors=list(map(lambda entity: entity.id, model.authors)),
         )
 
     @staticmethod
@@ -29,9 +30,17 @@ def start_mapper():
     t = BookEntity.__table__
     rt = BookAuthorEntity.__table__
 
-    mapper_registry.map_imperatively(Book, t, properties={
-        'authors': relationship(BookAuthor, backref=backref("book"), lazy='joined')
-    })
-    mapper_registry.map_imperatively(BookAuthor, rt, properties={
-        'books': relationship(Book, backref=backref("author", cascade="all, delete-orphan"), lazy='joined')
-    })
+    mapper_registry.map_imperatively(
+        Book,
+        t,
+        properties={"authors": relationship(BookAuthor, backref=backref("book"), lazy="joined")},
+    )
+    mapper_registry.map_imperatively(
+        BookAuthor,
+        rt,
+        properties={
+            "books": relationship(
+                Book, backref=backref("author", cascade="all, delete-orphan"), lazy="joined"
+            )
+        },
+    )

@@ -1,6 +1,7 @@
 from dataclasses import dataclass
-from sqlalchemy.ext.associationproxy import association_proxy
 from typing import FrozenSet
+
+from sqlalchemy.ext.associationproxy import association_proxy
 
 
 @dataclass

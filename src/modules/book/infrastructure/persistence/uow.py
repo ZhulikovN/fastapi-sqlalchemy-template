@@ -1,7 +1,7 @@
 from pymfdata.rdb.connection import AsyncEngine
 from pymfdata.rdb.usecase import AsyncSQLAlchemyUnitOfWork
 
-from persistence.book.repository import BookRepository
+from src.persistence.book.repository import BookRepository
 
 
 class BookPersistenceUnitOfWork(AsyncSQLAlchemyUnitOfWork):

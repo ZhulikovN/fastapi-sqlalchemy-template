@@ -1,7 +1,7 @@
 from pydantic import BaseModel
 
-from modules.book.domain.aggregate.id import BookId
-from modules.author.domain.aggregate.id import AuthorId
+from src.modules.author.domain.aggregate.id import AuthorId
+from src.modules.book.domain.aggregate.id import BookId
 
 
 class AddAuthorCommand(BaseModel):

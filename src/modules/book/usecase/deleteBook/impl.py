@@ -1,7 +1,7 @@
 from pymfdata.common.usecase import BaseUseCase
 from pymfdata.rdb.transaction import async_transactional
 
-from modules.book.infrastructure.persistence.uow import BookPersistenceUnitOfWork
+from src.modules.book.infrastructure.persistence.uow import BookPersistenceUnitOfWork
 
 from .command import DeleteBookCommand
 

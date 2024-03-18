@@ -1,8 +1,8 @@
 from pymfdata.rdb.repository import AsyncSession, BaseAsyncRepository
 from sqlalchemy import select
 
-from modules.book.infrastructure.query.dto import BookDTO
-from modules.book.infrastructure.query.repository.protocol import BookQueryRepository
+from src.modules.book.infrastructure.query.dto import BookDTO
+from src.modules.book.infrastructure.query.repository.protocol import BookQueryRepository
 
 
 class BookAlchemyRepository(BaseAsyncRepository, BookQueryRepository):

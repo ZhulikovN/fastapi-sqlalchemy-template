@@ -1,8 +1,9 @@
-from pydantic import BaseModel, Field
 from dataclasses import dataclass
 from typing import Optional
 
-from modules.author.domain.value_objects import Name, Age, Biography
+from pydantic import BaseModel, Field
+
+from src.modules.author.domain.value_objects import Age, Biography, Name
 
 
 @dataclass(frozen=True)

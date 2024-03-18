@@ -1,7 +1,7 @@
 from pymfdata.rdb.connection import AsyncEngine
 from pymfdata.rdb.usecase import AsyncSQLAlchemyUnitOfWork
 
-from persistence.author.repository import AuthorRepository
+from src.persistence.author.repository import AuthorRepository
 
 
 class AuthorPersistenceUnitOfWork(AsyncSQLAlchemyUnitOfWork):

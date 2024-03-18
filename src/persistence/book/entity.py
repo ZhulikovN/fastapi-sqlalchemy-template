@@ -1,18 +1,19 @@
-from pymfdata.rdb.mapper import Base
-from sqlalchemy import Column, BigInteger, Integer, String, ForeignKey
-from sqlalchemy.orm import relationship
 from typing import List, Union
+
+from pymfdata.rdb.mapper import Base
+from sqlalchemy import BigInteger, Column, ForeignKey, Integer, String
+from sqlalchemy.orm import relationship
 
 
 class BookAuthorEntity(Base):
-    __tablename__ = 'book_author'
+    __tablename__ = "book_author"
 
     book_id = Column(ForeignKey("book.id", ondelete="RESTRICT"), primary_key=True)
     author_id = Column(BigInteger, primary_key=True)
 
 
 class BookEntity(Base):
-    __tablename__ = 'book'
+    __tablename__ = "book"
 
     id: Union[int, Column] = Column(BigInteger, primary_key=True)
     title: Union[str, Column] = Column(String(100), nullable=False)
@@ -22,7 +23,7 @@ class BookEntity(Base):
     publication_year: Union[int, Column] = Column(Integer, nullable=False)
 
     # If viewonly set false, comment start_mapper for BookEntity, because two object conflict
-    r_authors = relationship(BookAuthorEntity, viewonly=True, lazy='joined')
+    r_authors = relationship(BookAuthorEntity, viewonly=True, lazy="joined")
 
     @property
     def authors(self) -> List[BookAuthorEntity]:
@@ -30,4 +31,6 @@ class BookEntity(Base):
 
     @authors.setter
     def authors(self, authors: List[int]):
-        self.r_authors = list(map(lambda _id: BookAuthorEntity(book_id=self.id, author_id=_id), authors))
+        self.r_authors = list(
+            map(lambda _id: BookAuthorEntity(book_id=self.id, author_id=_id), authors)
+        )
