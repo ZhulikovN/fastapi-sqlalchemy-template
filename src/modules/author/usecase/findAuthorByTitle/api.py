@@ -11,8 +11,8 @@ from .command import GetAuthorCommand
 
 @router.get(path="/{id}", name="Find auther by id")
 @inject
-async def find_book_by_title(
+async def find_author_by_id(
     id: AuthorId = Path(..., title="Book id"),
     uc: FindAuthorByTitleUseCase = Depends(Provide[Container.find_author_by_id_use_case]),
 ):
-    await uc.invoke(GetAuthorCommand(book_id=id))
+    return await uc.invoke(GetAuthorCommand(author_id=id))
