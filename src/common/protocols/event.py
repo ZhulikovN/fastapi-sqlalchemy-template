@@ -6,4 +6,5 @@ from pydantic import BaseModel
 
 class BaseEvent(ABC):
     @abstractmethod
-    async def handle(self, param: Union[Type[BaseModel], None] = None) -> None: ...
+    async def handle(self, param: Union[Type[BaseModel], None] = None) -> None:
+        pass

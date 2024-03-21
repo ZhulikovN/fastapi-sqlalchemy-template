@@ -25,7 +25,7 @@ from src.modules.book.usecase.newBook.impl import NewBookUseCase
 
 
 class Container(DeclarativeContainer):
-    db = Singleton(
+    db: Singleton[AsyncSQLAlchemy] = Singleton(
         AsyncSQLAlchemy,
         db_uri="{engine}://{username}:{password}@{host}:{port}/{db_name}".format(
             engine="postgresql+asyncpg",

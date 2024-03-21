@@ -1,8 +1,8 @@
 from abc import abstractmethod
 from typing import Protocol
 
-from src.modules.author.infrastructure.query.dto import AuthorDTO
 from src.modules.author.domain.aggregate.id import AuthorId
+from src.modules.author.infrastructure.query.dto import AuthorDTO
 
 
 class AuthorQueryRepository(Protocol):

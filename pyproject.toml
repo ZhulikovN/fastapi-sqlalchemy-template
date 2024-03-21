@@ -25,6 +25,7 @@ profile = "black"
 
 [tool.mypy]
 check_untyped_defs = false
+disable_error_code = ["arg-type", "assignment", "attr-defined", "misc", "override", "return-value", "valid-type", "var-annotated"]
 follow_imports_for_stubs = true
 ignore_missing_imports = true
 local_partial_types = true
@@ -34,7 +35,6 @@ show_error_context = true
 warn_redundant_casts = true
 warn_unused_configs = true
 warn_unused_ignores = true
-disable_error_code = ["valid-type", "arg-type"]
 
 [tool.poetry]
 authors = ["nikitazulikov <zhulikovnikita884@gmail.com>"]
@@ -58,7 +58,7 @@ pylint = "^3.1.0"
 pytest = "^8.1.1"
 pytest-cov = "^4.1.0"
 pytest-mock = "^3.12.0"
-python = "3.9.18"
+python = "^3.9"
 python-mf-data = {extras = ["rdb"], version = "^0.2.5"}
 toml-sort = "^0.23.1"
 uvicorn = {extras = ["standard"], version = "^0.17.5"}

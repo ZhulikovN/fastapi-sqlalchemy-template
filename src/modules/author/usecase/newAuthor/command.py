@@ -1,7 +1,7 @@
 from dataclasses import dataclass
 from typing import Optional
 
-from pydantic import BaseModel, Field
+from pydantic import BaseModel
 
 from src.modules.author.domain.value_objects import Age, Biography, Name
 
