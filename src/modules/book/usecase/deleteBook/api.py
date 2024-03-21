@@ -14,7 +14,7 @@ from src.modules.book.usecase.deleteBook.impl import (
 @router.delete(path="/{id}", name="Delete Book", status_code=status.HTTP_204_NO_CONTENT)
 @inject
 async def delete_book(
-    id: BookId = Path(..., title="Book ID"),
+    book_id: BookId = Path(..., title="Book ID"),
     uc: DeleteBookUseCase = Depends(Provide[Container.delete_book_use_case]),
 ):
-    await uc.invoke(DeleteBookCommand(book_id=id))
+    await uc.invoke(DeleteBookCommand(book_id=book_id))

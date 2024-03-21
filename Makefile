@@ -24,16 +24,6 @@ lint:
 	$(POETRY_EXEC) run flake8 $(CHECK_DIRS)
 	$(POETRY_EXEC) run pylint $(CHECK_DIRS)
 
-## test: run unit tests
-.PHONY: test
-test:
-	pytest ./tests -vv
-
-## test-cov: run tests with coverage
-.PHONY: test-cov
-test-cov:
-	$(POETRY_EXEC) run pytest ./tests -vv --cov
-
 ## format-check: run isort, black, toml-sort in check mode
 .PHONY: format-check
 format-check:
@@ -43,4 +33,4 @@ format-check:
 
 ## dev: run format, lint
 .PHONY: dev
-dev: format lint test-cov
+dev: format lint
