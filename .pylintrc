@@ -458,7 +458,27 @@ disable=R,
         unspecified-encoding,
         fixme,
         line-too-long,
-        protected-access
+        protected-access,
+        disallowed-name,
+        consider-using-f-string,
+        bad-mcs-method-argument,
+        no-value-for-parameter,
+        invalid-name,
+        invalid-overridden-method,
+        useless-parent-delegation,
+        attribute-defined-outside-init,
+        no-member,
+        unused-argument,
+        unrecognized-inline-option,
+        raise-missing-from
+
+
+
+
+
+
+
+
 
 # Enable the message, report, category or checker with the given id(s). You can
 # either give multiple identifier separated by comma (,) or put this option
