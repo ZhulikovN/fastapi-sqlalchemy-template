@@ -13,9 +13,9 @@ from .command import AddAuthorCommand
 @router.post(path="/{id}/authors/{author_id}", name="Add Author for Book")
 @inject
 async def add_author(
-    id: BookId = Path(..., title="Book ID"),
+    book_id: BookId = Path(..., title="Book ID"),
     author_id: AuthorId = Path(..., title="Author ID"),
     uc: AddAuthorUseCase = Depends(Provide[Container.add_author_use_case]),
 ):
-    await uc.invoke(AddAuthorCommand(book_id=id, author_id=author_id))
+    await uc.invoke(AddAuthorCommand(book_id=book_id, author_id=author_id))
     return "OK"

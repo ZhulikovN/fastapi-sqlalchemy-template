@@ -1,5 +1,3 @@
-from typing import Optional
-
 from src.common.protocols.event import BaseEvent
 from src.modules.author.domain.aggregate.id import AuthorId
 from src.modules.book.domain.aggregate.id import BookId

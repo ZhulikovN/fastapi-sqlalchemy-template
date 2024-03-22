@@ -1,5 +1,4 @@
 from pymfdata.rdb.repository import AsyncRepository, AsyncSession
-from sqlalchemy import inspect
 
 from src.modules.book.domain.aggregate.model import Book
 

@@ -1,7 +1,6 @@
 from fastapi import FastAPI, Request, status
 from fastapi.exceptions import RequestValidationError, StarletteHTTPException
 from fastapi.responses import PlainTextResponse
-from pydantic import EmailStr
 
 from src.core.fastapi.responses import ORJSONResponse
 
