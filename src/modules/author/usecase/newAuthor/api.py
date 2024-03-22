@@ -5,7 +5,7 @@ from fastapi import Depends
 from pydantic import BaseModel, Field, PositiveInt, constr
 from starlette import status
 
-from container import Container
+from src.container import Container
 from src.modules.author.domain.value_objects import Name
 from src.modules.author.usecase import router
 

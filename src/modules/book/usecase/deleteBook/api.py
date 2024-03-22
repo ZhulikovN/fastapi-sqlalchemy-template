@@ -2,7 +2,7 @@ from dependency_injector.wiring import Provide, inject
 from fastapi import Depends, Path
 from starlette import status
 
-from container import Container
+from src.container import Container
 from src.modules.book.domain.aggregate.id import BookId
 from src.modules.book.usecase import router
 from src.modules.book.usecase.deleteBook.impl import DeleteBookCommand, DeleteBookUseCase

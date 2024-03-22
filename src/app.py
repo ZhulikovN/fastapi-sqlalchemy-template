@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from sqlalchemy.orm import clear_mappers
 
-from container import Container
+from src.container import Container
 from core.fastapi.error import init_error_handler
 from core.fastapi.event.middleware import EventHandlerMiddleware
 from core.fastapi.responses import ORJSONResponse

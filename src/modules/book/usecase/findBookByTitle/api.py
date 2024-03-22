@@ -1,7 +1,7 @@
 from dependency_injector.wiring import Provide, inject
 from fastapi import Depends, Query
 
-from container import Container
+from src.container import Container
 from src.modules.book.usecase import router
 from src.modules.book.usecase.findBookByTitle.impl import FindBookByTitleUseCase
 

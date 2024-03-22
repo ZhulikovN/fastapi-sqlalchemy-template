@@ -1,7 +1,7 @@
 from dependency_injector.wiring import Provide, inject
 from fastapi import Depends, Path
 
-from container import Container
+from src.container import Container
 from src.modules.author.domain.aggregate.id import AuthorId
 from src.modules.book.domain.aggregate.id import BookId
 from src.modules.book.usecase import router
