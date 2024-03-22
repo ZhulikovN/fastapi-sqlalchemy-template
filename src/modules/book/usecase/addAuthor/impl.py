@@ -1,8 +1,8 @@
 from pymfdata.common.usecase import BaseUseCase
 from pymfdata.rdb.transaction import async_transactional
 
-from core.fastapi.event.dispatcher import EventDispatcher
-from core.fastapi.event.handler import event_handler
+from src.core.fastapi.event.dispatcher import EventDispatcher
+from src.core.fastapi.event.handler import event_handler
 from src.modules.author.usecase.addBookToAuthor.event_handler import (
     AddBookToAuthorEventHandler,
 )

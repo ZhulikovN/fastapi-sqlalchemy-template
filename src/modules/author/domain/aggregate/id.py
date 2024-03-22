@@ -1,6 +1,6 @@
 from pydantic import PositiveInt
 
-from core.snowflake import seq
+from src.core.snowflake import seq
 
 
 class AuthorId(PositiveInt):

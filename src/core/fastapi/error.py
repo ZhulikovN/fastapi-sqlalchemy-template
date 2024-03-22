@@ -3,7 +3,7 @@ from fastapi.exceptions import RequestValidationError, StarletteHTTPException
 from fastapi.responses import PlainTextResponse
 from pydantic import EmailStr
 
-from core.fastapi.responses import ORJSONResponse
+from src.core.fastapi.responses import ORJSONResponse
 
 
 def init_error_handler(app: FastAPI, admin_email: str):

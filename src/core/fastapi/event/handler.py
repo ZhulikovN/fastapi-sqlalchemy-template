@@ -6,7 +6,7 @@ import anyio
 from pydantic import BaseModel
 
 from src.common.protocols.event import BaseEvent
-from core.fastapi.event.exception import (
+from src.core.fastapi.event.exception import (
     EmptyContextException,
     InvalidEventTypeException,
     InvalidParameterTypeException,

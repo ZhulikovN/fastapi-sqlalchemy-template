@@ -2,10 +2,10 @@ from fastapi import FastAPI
 from sqlalchemy.orm import clear_mappers
 
 from src.container import Container
-from core.fastapi.error import init_error_handler
-from core.fastapi.event.middleware import EventHandlerMiddleware
-from core.fastapi.responses import ORJSONResponse
-from core.fastapi.routes import add_routes
+from src.core.fastapi.error import init_error_handler
+from src.core.fastapi.event.middleware import EventHandlerMiddleware
+from src.core.fastapi.responses import ORJSONResponse
+from src.core.fastapi.routes import add_routes
 from src.modules.author.infrastructure.persistence import (
     mapper as author_persistence_mapper,
 )
