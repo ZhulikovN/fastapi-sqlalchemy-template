@@ -3,7 +3,7 @@ from dataclasses import asdict
 from pymfdata.rdb.mapper import mapper_registry
 from sqlalchemy.orm import backref, relationship
 
-from persistence.book.entity import BookAuthorEntity, BookEntity
+from src.persistence.book.entity import BookAuthorEntity, BookEntity
 from src.common.protocols.model_mapper import ModelMapper
 from src.modules.book.domain.aggregate.model import Book, BookAuthor, BookId
 

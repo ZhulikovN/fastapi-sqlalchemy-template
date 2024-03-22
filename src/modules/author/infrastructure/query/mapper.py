@@ -1,6 +1,6 @@
 from pymfdata.rdb.mapper import mapper_registry
 
-from persistence.author.entity import AuthorBookEntity, AuthorEntity, relationship
+from src.persistence.author.entity import AuthorBookEntity, AuthorEntity, relationship
 
 from .dto import AuthorDTO
 

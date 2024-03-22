@@ -1,7 +1,7 @@
 from pymfdata.rdb.mapper import mapper_registry
 from sqlalchemy.orm import relationship
 
-from persistence.book.entity import BookAuthorEntity, BookEntity
+from src.persistence.book.entity import BookAuthorEntity, BookEntity
 
 from .dto import BookDTO
 
