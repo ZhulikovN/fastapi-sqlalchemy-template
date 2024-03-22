@@ -35,7 +35,7 @@ app.container = container
 db = container.db()
 
 app.add_middleware(EventHandlerMiddleware)
-init_error_handler(app, "contact@neonkid.xyz")
+init_error_handler(app, "")
 
 
 @app.on_event("startup")
