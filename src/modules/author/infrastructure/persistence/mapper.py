@@ -1,7 +1,7 @@
 from pymfdata.rdb.mapper import mapper_registry
 from sqlalchemy.orm import composite
 
-from common.protocols.model_mapper import ModelMapper
+from src.common.protocols.model_mapper import ModelMapper
 from modules.author.domain.aggregate.model import Author
 from modules.author.domain.value_objects import AuthorBook, Name
 from persistence.author.entity import AuthorBookEntity, AuthorEntity, relationship

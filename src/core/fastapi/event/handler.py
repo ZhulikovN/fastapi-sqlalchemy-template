@@ -5,7 +5,7 @@ from typing import Dict, NoReturn, Optional, Type, Union
 import anyio
 from pydantic import BaseModel
 
-from common.protocols.event import BaseEvent
+from src.common.protocols.event import BaseEvent
 from core.fastapi.event.exception import (
     EmptyContextException,
     InvalidEventTypeException,

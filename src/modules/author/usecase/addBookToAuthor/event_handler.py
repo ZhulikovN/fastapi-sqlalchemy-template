@@ -1,6 +1,6 @@
 from typing import Optional
 
-from common.protocols.event import BaseEvent
+from src.common.protocols.event import BaseEvent
 from modules.author.domain.aggregate.id import AuthorId
 from modules.book.domain.aggregate.id import BookId
 from modules.book.domain.event import AuthorAddedToBookDomainEvent
