@@ -1,10 +1,10 @@
 from pymfdata.rdb.mapper import mapper_registry
 from sqlalchemy.orm import composite
 
+from persistence.author.entity import AuthorBookEntity, AuthorEntity, relationship
 from src.common.protocols.model_mapper import ModelMapper
 from src.modules.author.domain.aggregate.model import Author
 from src.modules.author.domain.value_objects import AuthorBook, Name
-from persistence.author.entity import AuthorBookEntity, AuthorEntity, relationship
 
 
 # Classical Mapper (Traditional)

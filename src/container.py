@@ -2,8 +2,12 @@ from dependency_injector.containers import DeclarativeContainer
 from dependency_injector.providers import Factory, Singleton
 from pymfdata.rdb.connection import AsyncSQLAlchemy
 
-from src.modules.author.infrastructure.persistence.adapter import AuthorPersistenceAdapter
-from src.modules.author.infrastructure.persistence.uow import AuthorPersistenceUnitOfWork
+from src.modules.author.infrastructure.persistence.adapter import (
+    AuthorPersistenceAdapter,
+)
+from src.modules.author.infrastructure.persistence.uow import (
+    AuthorPersistenceUnitOfWork,
+)
 from src.modules.author.infrastructure.query.uow import AuthorQueryUnitOfWork
 from src.modules.author.usecase.addBookToAuthor.event_handler import (
     AddBookToAuthorEventHandler,

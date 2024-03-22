@@ -15,7 +15,9 @@ from src.modules.author.usecase.addBookToAuthor import (
     event_handler as book_domain_event_impl,
 )
 from src.modules.author.usecase.newAuthor import api as new_author_api
-from src.modules.book.infrastructure.persistence import mapper as book_persistence_mapper
+from src.modules.book.infrastructure.persistence import (
+    mapper as book_persistence_mapper,
+)
 from src.modules.book.infrastructure.query import mapper as book_query_mapper
 from src.modules.book.usecase import router as book_router
 from src.modules.book.usecase.addAuthor import api as add_author_api
