@@ -6,8 +6,10 @@ from modules.book.usecase import router
 from modules.book.usecase.findBookByTitle.impl import FindBookByTitleUseCase
 
 
-@router.get(path='', name="Find book by title")
+@router.get(path="", name="Find book by title")
 @inject
-async def find_book_by_title(title: str = Query(..., title="Book Title"),
-                             uc: FindBookByTitleUseCase = Depends(Provide[Container.find_book_by_title_use_case])):
+async def find_book_by_title(
+    title: str = Query(..., title="Book Title"),
+    uc: FindBookByTitleUseCase = Depends(Provide[Container.find_book_by_title_use_case]),
+):
     return await uc.invoke(title)

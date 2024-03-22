@@ -1,4 +1,4 @@
-from fastapi import status, Request, FastAPI
+from fastapi import FastAPI, Request, status
 from fastapi.exceptions import RequestValidationError, StarletteHTTPException
 from fastapi.responses import PlainTextResponse
 from pydantic import EmailStr
@@ -12,20 +12,16 @@ def init_error_handler(app: FastAPI, admin_email: str):
         return ORJSONResponse(
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
             content={
-                'title': type(exc).__name__,
-                'description': str(exc) + ', Contact me ({})'.format(admin_email)
-            }
+                "title": type(exc).__name__,
+                "description": str(exc) + ", Contact me ({})".format(admin_email),
+            },
         )
 
     @app.exception_handler(RequestValidationError)
     async def request_exception_handle(req: Request, exc: RequestValidationError):
         return ORJSONResponse(
             status_code=status.HTTP_400_BAD_REQUEST,
-            content={
-                'title': 'invalid:data',
-                'description': 'wrong value',
-                'extra': exc.errors()
-            }
+            content={"title": "invalid:data", "description": "wrong value", "extra": exc.errors()},
         )
 
     @app.exception_handler(StarletteHTTPException)

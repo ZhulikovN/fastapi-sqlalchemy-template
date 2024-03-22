@@ -2,8 +2,8 @@ from pymfdata.common.usecase import BaseUseCase
 from pymfdata.rdb.transaction import async_transactional
 
 from modules.book.domain.aggregate.model import Book
-from modules.book.usecase.newBook.command import NewBookCommand
 from modules.book.infrastructure.persistence.uow import BookPersistenceUnitOfWork
+from modules.book.usecase.newBook.command import NewBookCommand
 
 
 class NewBookUseCase(BaseUseCase[BookPersistenceUnitOfWork]):

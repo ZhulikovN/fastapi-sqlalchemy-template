@@ -1,6 +1,7 @@
-from starlette.responses import JSONResponse
-from sqlalchemy.ext.associationproxy import _AssociationList
 from typing import Any
+
+from sqlalchemy.ext.associationproxy import _AssociationList
+from starlette.responses import JSONResponse
 
 try:
     import orjson

@@ -1,6 +1,6 @@
 import time
-
 from datetime import datetime
+
 from loguru import logger
 
 # Datetime Now
@@ -18,9 +18,9 @@ sequence_mask = -1 ^ (-1 << sequence_bits)
 
 
 def snowflake_to_timestamp(_id):
-    _id = _id >> 22     # strip the lower 22 bits
-    _id += tw_epoch     # adjust for twitter epoch
-    _id = _id / 1000    # convert from milliseconds to seconds
+    _id = _id >> 22  # strip the lower 22 bits
+    _id += tw_epoch  # adjust for twitter epoch
+    _id = _id / 1000  # convert from milliseconds to seconds
 
     return _id
 
@@ -52,8 +52,12 @@ def generator(worker_id, data_center_id, sleep=lambda x: time.sleep(x / 1000.0))
 
         last_timestamp = timestamp
 
-        yield (((timestamp - tw_epoch) << timestamp_left_shift) | (data_center_id << data_center_id_shift) |
-               (worker_id << worker_id_shift) | sequence)
+        yield (
+            ((timestamp - tw_epoch) << timestamp_left_shift)
+            | (data_center_id << data_center_id_shift)
+            | (worker_id << worker_id_shift)
+            | sequence
+        )
 
 
 seq = generator(1, 1)

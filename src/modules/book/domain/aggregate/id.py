@@ -7,5 +7,5 @@ class BookId(PositiveInt):
     gt = 1
 
     @staticmethod
-    def next_id() -> 'BookId':
+    def next_id() -> "BookId":
         return BookId(seq.__next__())

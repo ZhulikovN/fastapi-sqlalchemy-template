@@ -1,21 +1,30 @@
-import anyio
 import inspect
 from contextvars import ContextVar
-from typing import Type, Dict, Union, Optional, NoReturn
+from typing import Dict, NoReturn, Optional, Type, Union
 
+import anyio
 from pydantic import BaseModel
 
 from common.protocols.event import BaseEvent
-from core.fastapi.event.exception import (InvalidEventTypeException, InvalidParameterTypeException,
-                                          EmptyContextException, ParameterCountException, RequiredParameterException)
+from core.fastapi.event.exception import (
+    EmptyContextException,
+    InvalidEventTypeException,
+    InvalidParameterTypeException,
+    ParameterCountException,
+    RequiredParameterException,
+)
 
-_handler_context: ContextVar[Optional, "EventHandler"] = ContextVar("_handler_context", default=None)
+_handler_context: ContextVar[Optional, "EventHandler"] = ContextVar(
+    "_handler_context", default=None
+)
 
 
 class EventHandlerValidator:
     EVENT_PARAMETER_COUNT = 2
 
-    async def validate(self, event: Type[BaseEvent], param: BaseModel = None) -> Optional[NoReturn]:
+    async def validate(
+        self, event: Type[BaseEvent], param: BaseModel = None
+    ) -> Optional[NoReturn]:
         if not issubclass(event, BaseEvent):
             raise InvalidEventTypeException
 

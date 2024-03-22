@@ -14,5 +14,7 @@ class AddBookToAuthorEventHandler(BaseEvent):
         self.uc = uc
 
     async def handle(self, param: AuthorAddedToBookDomainEvent = None) -> None:
-        command = AddBookToAuthorCommand(book_id=BookId(param.book_id), author_id=AuthorId(param.author_id))
+        command = AddBookToAuthorCommand(
+            book_id=BookId(param.book_id), author_id=AuthorId(param.author_id)
+        )
         await self.uc.invoke(command)

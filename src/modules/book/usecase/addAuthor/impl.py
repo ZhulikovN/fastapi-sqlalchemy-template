@@ -3,7 +3,9 @@ from pymfdata.rdb.transaction import async_transactional
 
 from core.fastapi.event.dispatcher import EventDispatcher
 from core.fastapi.event.handler import event_handler
-from modules.author.usecase.addBookToAuthor.event_handler import AddBookToAuthorEventHandler
+from modules.author.usecase.addBookToAuthor.event_handler import (
+    AddBookToAuthorEventHandler,
+)
 from modules.book.domain.aggregate.model import Book
 from modules.book.domain.event import AuthorAddedToBookDomainEvent
 from modules.book.infrastructure.persistence.uow import BookPersistenceUnitOfWork
@@ -24,7 +26,10 @@ class AddAuthorUseCase(BaseUseCase[BookPersistenceUnitOfWork]):
         book.add_author(command)
 
         # Publish Event
-        await event_handler.store(event=self._event,
-                                  param=AuthorAddedToBookDomainEvent(book_id=command.book_id,
-                                                                     author_id=command.author_id))
+        await event_handler.store(
+            event=self._event,
+            param=AuthorAddedToBookDomainEvent(
+                book_id=command.book_id, author_id=command.author_id
+            ),
+        )
         return book

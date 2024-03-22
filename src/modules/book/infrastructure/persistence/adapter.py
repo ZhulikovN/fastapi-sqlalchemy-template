@@ -7,7 +7,9 @@ from modules.book.domain.aggregate.model import Book, BookId
 from .uow import BookPersistenceUnitOfWork
 
 
-class BookPersistenceAdapter(BaseUseCase[BookPersistenceUnitOfWork], PersistenceAdapter[Book, BookId]):
+class BookPersistenceAdapter(
+    BaseUseCase[BookPersistenceUnitOfWork], PersistenceAdapter[Book, BookId]
+):
     def __init__(self, uow: BookPersistenceUnitOfWork) -> None:
         self._uow = uow
 

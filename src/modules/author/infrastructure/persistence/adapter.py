@@ -7,7 +7,9 @@ from modules.author.domain.aggregate.model import Author, AuthorId
 from .uow import AuthorPersistenceUnitOfWork
 
 
-class AuthorPersistenceAdapter(BaseUseCase[AuthorPersistenceUnitOfWork], PersistenceAdapter[Author, AuthorId]):
+class AuthorPersistenceAdapter(
+    BaseUseCase[AuthorPersistenceUnitOfWork], PersistenceAdapter[Author, AuthorId]
+):
     def __init__(self, uow: AuthorPersistenceUnitOfWork) -> None:
         self._uow = uow
 

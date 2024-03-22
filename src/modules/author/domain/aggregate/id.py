@@ -7,5 +7,5 @@ class AuthorId(PositiveInt):
     gt = 1
 
     @staticmethod
-    def next_id() -> 'AuthorId':
+    def next_id() -> "AuthorId":
         return seq.__next__()
