@@ -6,8 +6,8 @@ from pydantic import BaseModel, Field, PositiveInt, constr
 from starlette import status
 
 from container import Container
-from modules.author.domain.value_objects import Name
-from modules.author.usecase import router
+from src.modules.author.domain.value_objects import Name
+from src.modules.author.usecase import router
 
 from .impl import NewAuthorCommand, NewAuthorUseCase
 

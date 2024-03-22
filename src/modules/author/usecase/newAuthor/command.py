@@ -3,7 +3,7 @@ from typing import Optional
 
 from pydantic import BaseModel, Field
 
-from modules.author.domain.value_objects import Age, Biography, Name
+from src.modules.author.domain.value_objects import Age, Biography, Name
 
 
 @dataclass(frozen=True)

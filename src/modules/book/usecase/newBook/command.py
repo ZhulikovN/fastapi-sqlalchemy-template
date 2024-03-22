@@ -1,6 +1,6 @@
 from pydantic import BaseModel, Field
 
-from modules.book.domain.value_objects import Isbn, KoreanMoney, Page, Title, Year
+from src.modules.book.domain.value_objects import Isbn, KoreanMoney, Page, Title, Year
 
 
 class NewBookCommand(BaseModel):

@@ -2,10 +2,10 @@ from dependency_injector.wiring import Provide, inject
 from fastapi import Depends, Path
 
 from container import Container
-from modules.author.domain.aggregate.id import AuthorId
-from modules.book.domain.aggregate.id import BookId
-from modules.book.usecase import router
-from modules.book.usecase.addAuthor.impl import AddAuthorUseCase
+from src.modules.author.domain.aggregate.id import AuthorId
+from src.modules.book.domain.aggregate.id import BookId
+from src.modules.book.usecase import router
+from src.modules.book.usecase.addAuthor.impl import AddAuthorUseCase
 
 from .command import AddAuthorCommand
 

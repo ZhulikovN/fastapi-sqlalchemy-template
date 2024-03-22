@@ -2,7 +2,7 @@ from pymfdata.common.usecase import BaseUseCase
 from pymfdata.rdb.transaction import async_transactional
 
 from src.common.protocols.persistence_adapter import PersistenceAdapter
-from modules.author.domain.aggregate.model import Author, AuthorId
+from src.modules.author.domain.aggregate.model import Author, AuthorId
 
 from .uow import AuthorPersistenceUnitOfWork
 

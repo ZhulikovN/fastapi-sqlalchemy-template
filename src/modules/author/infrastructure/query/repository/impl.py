@@ -1,8 +1,8 @@
 from pymfdata.rdb.repository import AsyncSession, BaseAsyncRepository
 from sqlalchemy import select
 
-from modules.author.infrastructure.query.dto import AuthorDTO
-from modules.author.infrastructure.query.repository.protocol import (
+from src.modules.author.infrastructure.query.dto import AuthorDTO
+from src.modules.author.infrastructure.query.repository.protocol import (
     AuthorQueryRepository,
 )
 

@@ -1,6 +1,6 @@
 from pydantic import BaseModel, Field
 
-from modules.book.domain.aggregate.model import BookId
+from src.modules.book.domain.aggregate.model import BookId
 
 
 class DeleteBookCommand(BaseModel):

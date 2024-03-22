@@ -1,6 +1,6 @@
 from pymfdata.rdb.repository import AsyncRepository, AsyncSession
 
-from modules.author.domain.aggregate.model import Author
+from src.modules.author.domain.aggregate.model import Author
 
 
 class AuthorRepository(AsyncRepository[Author, int]):

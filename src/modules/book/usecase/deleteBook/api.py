@@ -3,9 +3,9 @@ from fastapi import Depends, Path
 from starlette import status
 
 from container import Container
-from modules.book.domain.aggregate.id import BookId
-from modules.book.usecase import router
-from modules.book.usecase.deleteBook.impl import DeleteBookCommand, DeleteBookUseCase
+from src.modules.book.domain.aggregate.id import BookId
+from src.modules.book.usecase import router
+from src.modules.book.usecase.deleteBook.impl import DeleteBookCommand, DeleteBookUseCase
 
 
 @router.delete(path="/{id}", name="Delete Book", status_code=status.HTTP_204_NO_CONTENT)

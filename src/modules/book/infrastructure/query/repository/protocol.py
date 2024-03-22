@@ -1,7 +1,7 @@
 from abc import abstractmethod
 from typing import Protocol
 
-from modules.book.infrastructure.query.dto import BookDTO
+from src.modules.book.infrastructure.query.dto import BookDTO
 
 
 class BookQueryRepository(Protocol):

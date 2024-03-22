@@ -2,8 +2,8 @@ from pydantic import PositiveInt
 from pydantic.dataclasses import dataclass
 
 from core.pydantic import ConStr
-from modules.author.domain.aggregate.id import AuthorId
-from modules.book.domain.aggregate.id import BookId
+from src.modules.author.domain.aggregate.id import AuthorId
+from src.modules.book.domain.aggregate.id import BookId
 
 
 class Title(ConStr):

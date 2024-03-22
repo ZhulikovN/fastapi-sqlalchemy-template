@@ -3,8 +3,8 @@ from fastapi import Depends
 from starlette import status
 
 from container import Container
-from modules.book.usecase import router
-from modules.book.usecase.newBook.impl import NewBookUseCase
+from src.modules.book.usecase import router
+from src.modules.book.usecase.newBook.impl import NewBookUseCase
 
 from .impl import NewBookCommand
 

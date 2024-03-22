@@ -1,8 +1,8 @@
 from pymfdata.common.usecase import BaseUseCase
 from pymfdata.rdb.transaction import async_transactional
 
-from modules.book.infrastructure.query.dto import BookDTO
-from modules.book.infrastructure.query.uow import BookQueryUnitOfWork
+from src.modules.book.infrastructure.query.dto import BookDTO
+from src.modules.book.infrastructure.query.uow import BookQueryUnitOfWork
 
 
 class FindBookByTitleUseCase(BaseUseCase[BookQueryUnitOfWork]):

@@ -2,21 +2,21 @@ from dependency_injector.containers import DeclarativeContainer
 from dependency_injector.providers import Factory, Singleton
 from pymfdata.rdb.connection import AsyncSQLAlchemy
 
-from modules.author.infrastructure.persistence.adapter import AuthorPersistenceAdapter
-from modules.author.infrastructure.persistence.uow import AuthorPersistenceUnitOfWork
-from modules.author.infrastructure.query.uow import AuthorQueryUnitOfWork
-from modules.author.usecase.addBookToAuthor.event_handler import (
+from src.modules.author.infrastructure.persistence.adapter import AuthorPersistenceAdapter
+from src.modules.author.infrastructure.persistence.uow import AuthorPersistenceUnitOfWork
+from src.modules.author.infrastructure.query.uow import AuthorQueryUnitOfWork
+from src.modules.author.usecase.addBookToAuthor.event_handler import (
     AddBookToAuthorEventHandler,
 )
-from modules.author.usecase.addBookToAuthor.impl import AddBookToAuthorUseCase
-from modules.author.usecase.newAuthor.impl import NewAuthorUseCase
-from modules.book.infrastructure.persistence.adapter import BookPersistenceAdapter
-from modules.book.infrastructure.persistence.uow import BookPersistenceUnitOfWork
-from modules.book.infrastructure.query.uow import BookQueryUnitOfWork
-from modules.book.usecase.addAuthor.impl import AddAuthorUseCase
-from modules.book.usecase.deleteBook.impl import DeleteBookUseCase
-from modules.book.usecase.findBookByTitle.impl import FindBookByTitleUseCase
-from modules.book.usecase.newBook.impl import NewBookUseCase
+from src.modules.author.usecase.addBookToAuthor.impl import AddBookToAuthorUseCase
+from src.modules.author.usecase.newAuthor.impl import NewAuthorUseCase
+from src.modules.book.infrastructure.persistence.adapter import BookPersistenceAdapter
+from src.modules.book.infrastructure.persistence.uow import BookPersistenceUnitOfWork
+from src.modules.book.infrastructure.query.uow import BookQueryUnitOfWork
+from src.modules.book.usecase.addAuthor.impl import AddAuthorUseCase
+from src.modules.book.usecase.deleteBook.impl import DeleteBookUseCase
+from src.modules.book.usecase.findBookByTitle.impl import FindBookByTitleUseCase
+from src.modules.book.usecase.newBook.impl import NewBookUseCase
 
 
 class Container(DeclarativeContainer):

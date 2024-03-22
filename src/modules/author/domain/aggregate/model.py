@@ -1,9 +1,9 @@
 from dataclasses import dataclass, field
 from typing import List, Optional
 
-from modules.author.domain.value_objects import Age, AuthorBook, Biography, Name
-from modules.author.usecase.addBookToAuthor.command import AddBookToAuthorCommand
-from modules.author.usecase.newAuthor.command import NewAuthorCommand
+from src.modules.author.domain.value_objects import Age, AuthorBook, Biography, Name
+from src.modules.author.usecase.addBookToAuthor.command import AddBookToAuthorCommand
+from src.modules.author.usecase.newAuthor.command import NewAuthorCommand
 
 from .id import AuthorId
 

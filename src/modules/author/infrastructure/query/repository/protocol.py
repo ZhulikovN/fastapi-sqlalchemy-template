@@ -1,7 +1,7 @@
 from abc import abstractmethod
 from typing import Protocol
 
-from modules.author.infrastructure.query.dto import AuthorDTO
+from src.modules.author.infrastructure.query.dto import AuthorDTO
 
 
 class AuthorQueryRepository(Protocol):

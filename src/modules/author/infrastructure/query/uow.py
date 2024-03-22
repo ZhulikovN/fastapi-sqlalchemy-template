@@ -1,7 +1,7 @@
 from pymfdata.rdb.connection import AsyncEngine
 from pymfdata.rdb.usecase import AsyncSQLAlchemyUnitOfWork
 
-from modules.author.infrastructure.query.repository.impl import (
+from src.modules.author.infrastructure.query.repository.impl import (
     AuthorAlchemyRepository,
     AuthorQueryRepository,
 )

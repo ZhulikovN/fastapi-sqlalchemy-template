@@ -1,7 +1,7 @@
 from pymfdata.rdb.repository import AsyncRepository, AsyncSession
 from sqlalchemy import inspect
 
-from modules.book.domain.aggregate.model import Book
+from src.modules.book.domain.aggregate.model import Book
 
 
 class BookRepository(AsyncRepository[Book, int]):

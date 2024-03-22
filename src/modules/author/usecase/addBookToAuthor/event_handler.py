@@ -1,9 +1,9 @@
 from typing import Optional
 
 from src.common.protocols.event import BaseEvent
-from modules.author.domain.aggregate.id import AuthorId
-from modules.book.domain.aggregate.id import BookId
-from modules.book.domain.event import AuthorAddedToBookDomainEvent
+from src.modules.author.domain.aggregate.id import AuthorId
+from src.modules.book.domain.aggregate.id import BookId
+from src.modules.book.domain.event import AuthorAddedToBookDomainEvent
 
 from .command import AddBookToAuthorCommand
 from .impl import AddBookToAuthorUseCase

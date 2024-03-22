@@ -2,8 +2,8 @@ from dependency_injector.wiring import Provide, inject
 from fastapi import Depends, Query
 
 from container import Container
-from modules.book.usecase import router
-from modules.book.usecase.findBookByTitle.impl import FindBookByTitleUseCase
+from src.modules.book.usecase import router
+from src.modules.book.usecase.findBookByTitle.impl import FindBookByTitleUseCase
 
 
 @router.get(path="", name="Find book by title")

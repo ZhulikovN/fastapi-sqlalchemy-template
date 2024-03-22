@@ -4,7 +4,7 @@ from pymfdata.rdb.mapper import Base
 from sqlalchemy import BigInteger, Column, ForeignKey, Integer, String
 from sqlalchemy.orm import composite, relationship
 
-from modules.author.domain.value_objects import Name
+from src.modules.author.domain.value_objects import Name
 
 
 class AuthorBookEntity(Base):

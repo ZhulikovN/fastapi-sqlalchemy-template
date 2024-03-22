@@ -1,7 +1,7 @@
 from dataclasses import dataclass, field
 from typing import List
 
-from modules.book.domain.value_objects import (
+from src.modules.book.domain.value_objects import (
     BookAuthor,
     Isbn,
     KoreanMoney,
@@ -9,8 +9,8 @@ from modules.book.domain.value_objects import (
     Title,
     Year,
 )
-from modules.book.usecase.addAuthor.command import AddAuthorCommand
-from modules.book.usecase.newBook.command import NewBookCommand
+from src.modules.book.usecase.addAuthor.command import AddAuthorCommand
+from src.modules.book.usecase.newBook.command import NewBookCommand
 
 from .id import BookId
 
