@@ -14,7 +14,7 @@ from src.core.fastapi.event.exception import (
     RequiredParameterException,
 )
 
-_handler_context: ContextVar[Optional, "EventHandler"] = ContextVar(
+_handler_context: ContextVar[Optional["EventHandler"]] = ContextVar(
     "_handler_context", default=None
 )
 
@@ -23,7 +23,7 @@ class EventHandlerValidator:
     EVENT_PARAMETER_COUNT = 2
 
     async def validate(
-        self, event: Type[BaseEvent], param: BaseModel = None
+        self, event: Type[BaseEvent], param: Optional[BaseModel] = None
     ) -> Optional[NoReturn]:
         if not issubclass(event, BaseEvent):
             raise InvalidEventTypeException
@@ -37,10 +37,11 @@ class EventHandlerValidator:
             raise ParameterCountException
 
         base_parameter = func_parameters.get("param")
-        if base_parameter.default is not None and not param:
+        if base_parameter is not None and base_parameter.default is not None and not param:
             raise RequiredParameterException(
                 cls_name=base_parameter.__class__.__name__,
             )
+        return None
 
 
 class EventHandler:
