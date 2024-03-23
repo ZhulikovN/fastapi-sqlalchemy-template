@@ -1,3 +1,4 @@
+import uvicorn
 from fastapi import FastAPI
 from sqlalchemy.orm import clear_mappers
 
@@ -21,6 +22,7 @@ from src.modules.book.usecase.addAuthor import api as add_author_api
 from src.modules.book.usecase.deleteBook import api as delete_book_api
 from src.modules.book.usecase.findBookByTitle import api as find_book_api
 from src.modules.book.usecase.newBook import api as new_book_api
+from src.settings import settings
 
 app = FastAPI(default_response_class=ORJSONResponse)
 add_routes([author_router, book_router], app)
@@ -55,3 +57,9 @@ async def on_shutdown():
     clear_mappers()
 
     await db.disconnect()
+
+
+if __name__ == "__main__":
+    config = uvicorn.Config(app, host=settings.API_HOST, port=settings.API_PORT, log_level="info")
+    server = uvicorn.Server(config)
+    server.run()

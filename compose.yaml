@@ -1,0 +1,42 @@
+version: '3.9'
+
+services:
+  app:
+    build: .
+    command: [ "./wait-for-it.sh", "db:5432", "--", "python", "src/app.py" ]
+    environment:
+      - DB_HOST=db
+      - DB_PORT=5432
+      - DB_USER=postgres
+      - DB_NAME=postgres
+      - DB_PASSWORD=postgres
+      - API_HOST=0.0.0.0
+      - API_PORT=8000
+    ports:
+      - 8000:8000
+    depends_on:
+      - db
+    links:
+      - db
+    networks:
+      - app-network
+
+  db:
+    image: postgres:16
+    environment:
+      - POSTGRES_DB=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - 5432:5432
+    networks:
+      - app-network
+
+networks:
+ app-network:
+   driver: bridge
+
+volumes:
+  postgres_data:
