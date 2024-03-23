@@ -2,7 +2,6 @@ import uvicorn
 from fastapi import FastAPI
 from sqlalchemy.orm import clear_mappers
 
-from settings import settings
 from src.container import Container
 from src.core.fastapi.error import init_error_handler
 from src.core.fastapi.event.middleware import EventHandlerMiddleware
@@ -23,6 +22,7 @@ from src.modules.book.usecase.addAuthor import api as add_author_api
 from src.modules.book.usecase.deleteBook import api as delete_book_api
 from src.modules.book.usecase.findBookByTitle import api as find_book_api
 from src.modules.book.usecase.newBook import api as new_book_api
+from src.settings import settings
 
 app = FastAPI(default_response_class=ORJSONResponse)
 add_routes([author_router, book_router], app)

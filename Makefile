@@ -31,6 +31,16 @@ format-check:
 	$(POETRY_EXEC) run isort $(CHECK_DIRS) --check-only
 	$(POETRY_EXEC) run toml-sort $(TOML_FILES) --check
 
+## compose-up: start docker-compose services
+.PHONY: compose-up
+compose-up:
+	@docker-compose -f compose.yaml up -d
+
+## compose-down: stop docker-compose services
+.PHONY: compose-down
+compose-down:
+	-@docker-compose -f compose.yaml down --volumes
 ## dev: run format, lint
+
 .PHONY: dev
 dev: format lint

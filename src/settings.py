@@ -1,4 +1,4 @@
-from pydantic import Field, BaseSettings
+from pydantic import BaseSettings, Field
 
 
 class Settings(BaseSettings):
@@ -11,11 +11,8 @@ class Settings(BaseSettings):
     API_PORT: int = Field(default=5000, description="Порт API")
 
     class Config:
-        env_file = ".env"
-        env_file_encoding = 'utf-8'
-
+        env_file = "../.env"
+        env_file_encoding = "utf-8"
 
 
 settings = Settings()
-
-
