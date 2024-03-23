@@ -14,4 +14,3 @@ async def find_author_by_first_name(
 ):
     result = await uc.invoke(first_name)
     return result
-
