@@ -1,6 +1,8 @@
+import uvicorn
 from fastapi import FastAPI
 from sqlalchemy.orm import clear_mappers
 
+from settings import settings
 from src.container import Container
 from src.core.fastapi.error import init_error_handler
 from src.core.fastapi.event.middleware import EventHandlerMiddleware
@@ -55,3 +57,9 @@ async def on_shutdown():
     clear_mappers()
 
     await db.disconnect()
+
+
+if __name__ == "__main__":
+    config = uvicorn.Config(app, host=settings.API_HOST, port=settings.API_PORT, log_level="info")
+    server = uvicorn.Server(config)
+    server.run()
