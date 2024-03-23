@@ -5,7 +5,6 @@ from src.modules.author.infrastructure.query.dto import AuthorDTO
 from src.modules.author.infrastructure.query.repository.protocol import (
     AuthorQueryRepository,
 )
-from src.modules.author.domain.aggregate.id import AuthorId
 
 
 class AuthorAlchemyRepository(BaseAsyncRepository, AuthorQueryRepository):
