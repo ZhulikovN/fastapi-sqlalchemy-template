@@ -10,8 +10,6 @@ RUN poetry config virtualenvs.create false
 
 RUN poetry install --no-dev
 
-RUN pip install asyncpg sqlalchemy
-
 COPY . /usr/src/app/
 
 COPY wait-for-it.sh .
