@@ -11,7 +11,7 @@ class Settings(BaseSettings):
     API_PORT: int = Field(default=8000, description="Порт API")
 
     class Config:
-        env_file = ".env"
+        env_file = "../.env"
         env_file_encoding = "utf-8"
 
 
