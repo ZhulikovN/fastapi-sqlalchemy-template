@@ -5,13 +5,13 @@ services:
     build: .
     command: [ "./wait-for-it.sh", "db:5432", "--", "python", "src/app.py" ]
     environment:
-      - HOST=db
-      - PORT=5432
+      - DB_HOST=db
+      - DB_PORT=5432
       - DB_USER=postgres
-      - DBNAME=postgres
-      - PASSWORD=postgres
+      - DB_NAME=postgres
+      - DB_PASSWORD=postgres
     ports:
-      - 8000:8000
+      - 5000:5000
     depends_on:
       - db
     links:
