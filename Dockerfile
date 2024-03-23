@@ -19,6 +19,6 @@ RUN chmod +x wait-for-it.sh
 
 ENV PYTHONPATH=/usr/src/app
 
-EXPOSE 5000
+EXPOSE 8000
 
-CMD ["uvicorn", "src.app:app", "--host=0.0.0.0", "--loop=uvloop", "--port=5000"]
+CMD ["uvicorn", "src.app:app", "--host=0.0.0.0", "--loop=uvloop", "--port=8000"]

@@ -21,6 +21,7 @@ from src.modules.book.usecase.addAuthor.impl import AddAuthorUseCase
 from src.modules.book.usecase.deleteBook.impl import DeleteBookUseCase
 from src.modules.book.usecase.findBookByTitle.impl import FindBookByTitleUseCase
 from src.modules.book.usecase.newBook.impl import NewBookUseCase
+from src.settings import settings
 
 
 class Container(DeclarativeContainer):
@@ -28,11 +29,11 @@ class Container(DeclarativeContainer):
         AsyncSQLAlchemy,
         db_uri="{engine}://{username}:{password}@{host}:{port}/{db_name}".format(
             engine="postgresql+asyncpg",
-            username="postgres",
-            password="postgres",
-            host="127.0.0.1",
-            port=5432,
-            db_name="ddd_book",
+            username=settings.DB_USER,
+            password=settings.DB_PASSWORD,
+            host=settings.DB_HOST,
+            port=settings.DB_PORT,
+            db_name=settings.DB_NAME,
         ),
     )
 
