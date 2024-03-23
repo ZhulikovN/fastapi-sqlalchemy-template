@@ -40,7 +40,7 @@ compose-up:
 .PHONY: compose-down
 compose-down:
 	-@docker-compose -f compose.yaml down --volumes
-## dev: run format, lint
 
+## dev: run format, lint
 .PHONY: dev
 dev: format lint
