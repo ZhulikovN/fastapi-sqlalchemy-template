@@ -1,6 +1,8 @@
+from typing import List
+
 from pymfdata.common.usecase import BaseUseCase
 from pymfdata.rdb.transaction import async_transactional
-from typing import List
+
 from src.modules.author.infrastructure.query.dto import AuthorDTO
 from src.modules.author.infrastructure.query.uow import AuthorQueryUnitOfWork
 
