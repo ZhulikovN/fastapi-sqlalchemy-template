@@ -12,7 +12,9 @@ from src.modules.author.infrastructure.persistence import (
 )
 from src.modules.author.infrastructure.query import mapper as author_query_mapper
 from src.modules.author.usecase import router as author_router
-from src.modules.author.usecase.findAuthorByTitle import api as get_author_by_first_name
+from src.modules.author.usecase.FindAuthorByFirstname import (
+    api as get_author_by_first_name,
+)
 from src.modules.author.usecase.newAuthor import api as new_author_api
 from src.modules.book.infrastructure.persistence import (
     mapper as book_persistence_mapper,
@@ -25,7 +27,7 @@ from src.modules.book.usecase.findBookByTitle import api as find_book_api
 from src.modules.book.usecase.newBook import api as new_book_api
 from src.settings import settings
 
-app = FastAPI(debug=True, default_response_class=ORJSONResponse)
+app = FastAPI(debug=settings.API_DEBUG, default_response_class=ORJSONResponse)
 add_routes([author_router, book_router], app)
 
 # Insert Container (IoC)

@@ -9,6 +9,7 @@ class Settings(BaseSettings):
     DB_PORT: int = Field(default=5432, description="Порт подключения к базе данных")
     API_HOST: str = Field(default="", description="Хост API")
     API_PORT: int = Field(default=8000, description="Порт API")
+    API_DEBUG: bool = Field(default=False, description="Отладочный режим API")
 
     class Config:
         env_file = "../.env"

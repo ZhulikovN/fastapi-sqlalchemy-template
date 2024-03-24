@@ -13,7 +13,7 @@ from src.modules.author.usecase.addBookToAuthor.event_handler import (
     AddBookToAuthorEventHandler,
 )
 from src.modules.author.usecase.addBookToAuthor.impl import AddBookToAuthorUseCase
-from src.modules.author.usecase.findAuthorByTitle.impl import FindAuthorByTitleUseCase
+from src.modules.author.usecase.FindAuthorByFirstname.impl import FindAuthorByFirstname
 from src.modules.author.usecase.newAuthor.impl import NewAuthorUseCase
 from src.modules.book.infrastructure.persistence.adapter import BookPersistenceAdapter
 from src.modules.book.infrastructure.persistence.uow import BookPersistenceUnitOfWork
@@ -69,5 +69,5 @@ class Container(DeclarativeContainer):
     find_book_by_title_use_case = Factory(FindBookByTitleUseCase, uow=book_query_unit_of_work)
     new_book_use_case = Factory(NewBookUseCase, uow=book_persistence_unit_of_work)
     find_author_by_first_name_use_case = Factory(
-        FindAuthorByTitleUseCase, uow=author_query_unit_of_work
+        FindAuthorByFirstname, uow=author_query_unit_of_work
     )
