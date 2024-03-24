@@ -1,5 +1,5 @@
 from abc import abstractmethod
-from typing import Protocol, List
+from typing import List, Protocol
 
 from src.modules.author.infrastructure.query.dto import AuthorDTO
 
