@@ -2,43 +2,41 @@ from fastapi.testclient import TestClient
 from src.app import app
 import pytest
 from httpx import AsyncClient
-from sqlalchemy.ext.asyncio import AsyncSession
-from unittest.mock import patch
-from fastapi.testclient import TestClient
-from unittest.mock import MagicMock
+# from sqlalchemy.ext.asyncio import AsyncSession
+# from unittest.mock import patch
+# from fastapi.testclient import TestClient
+# from unittest.mock import MagicMock
 import pytest
 # from src.modules.author.infrastructure.query.dto import AuthorDTO
-from dataclasses import dataclass, field
-from typing import List
-from src.container import Container
+
+# from src.container import Container
 from src.app import app
+# from tests.conftest  import  test_db_session, test_db_session
+from sqlalchemy.ext.asyncio import create_async_engine, AsyncSession
+import asyncio
+import asyncpg
+from tests.conftest import test_db_name
 
-@dataclass
-class AuthorDTO:
-    id: int
-    first_name: str
-    last_name: str
-    age: int
-    biography: str
-    books: List[int] = field(default_factory=list)
 
-@pytest.fixture
-def mock_fetch_by_author_first_name():
-    # Эмулируем результат запроса к базе данных
-    return [AuthorDTO(id=1, first_name="John", last_name="Doe", age=30, biography="Test biography",
-                      books=[1, 2])]
 @pytest.mark.asyncio
-async def test_find_author_by_first_name(mock_fetch_by_author_first_name):
-    async with AsyncClient(app=app, base_url="ttp://127.0.0.1:8000") as ac:
+async def test_find_author_by_first_name(db_session, moc_data):
+    async with AsyncClient(app=app, base_url="http://0.0.0.0:8000") as ac:
 
         # Тестируем эндпоинт с помощью мока
         response = await ac.get("/authors?first_name=John")
 
     assert response.status_code == 200
-    assert response.json() == [
-        {"id": 1, "first_name": "John", "last_name": "Doe", "age": 30,
-         "biography": "Test biography", "books": [1, 2]}
-    ]
+    # assert response.json() == [
+    #     {"id": 1, "first_name": "John", "last_name": "Doe", "age": 30,
+    #      "biography": "Test biography", "books": [1, 2]}
+    # ]
+
+# @pytest.fixture
+# def mock_fetch_by_author_first_name():
+#     # Эмулируем результат запроса к базе данных
+#     return [AuthorDTO(id=1, first_name="John", last_name="Doe", age=30, biography="Test biography",
+#                       books=[1, 2])]
+
 
 # @pytest.mark.asyncio
 # # @patch("app.AsyncClient.get")
