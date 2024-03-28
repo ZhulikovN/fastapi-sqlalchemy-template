@@ -1,17 +1,10 @@
 import pytest
-from tests.conftest import create_test_database, create_tables
+# from tests.conftest import create_test_database, create_tables
 import asyncio
 
-#
-# @pytest.fixture
-# async def setup_database():
-#     # Подготовка: Создание тестовой базы данных и таблиц
-#     await create_test_database()
-#     await create_tables()
-#     yield
 
 @pytest.mark.asyncio
-async def test_moc_data(db_session, moc_data):
+async def test_moc_data(db_session,  moc_data):
     # await create_test_database()
     async for session in db_session:
         result = await session.execute("SELECT * FROM authortests WHERE first_name = 'John'")

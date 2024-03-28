@@ -62,3 +62,9 @@ python = "^3.9"
 python-mf-data = {extras = ["rdb"], version = "^0.2.5"}
 toml-sort = "^0.23.1"
 uvicorn = {extras = ["standard"], version = "^0.17.5"}
+pytest-asyncio = "^0.23.6"
+
+[tool.pytest.ini_options]
+filterwarnings = [
+    "ignore::DeprecationWarning:asynctest.*",
+]
